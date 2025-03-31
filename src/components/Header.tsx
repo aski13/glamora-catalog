@@ -22,44 +22,44 @@ const Header = () => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add search functionality here
-    console.log('Searching for:', searchQuery);
+    // Добавить функционал поиска здесь
+    console.log('Поиск:', searchQuery);
   };
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Лого */}
           <Link to="/" className="text-2xl font-bold text-cosmetic-charcoal">
             Glamora
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Десктопная навигация */}
           <nav className="hidden md:flex space-x-6">
             <Link to="/" className="text-gray-700 hover:text-cosmetic-rose font-medium">
-              Home
+              Главная
             </Link>
             <Link to="/products" className="text-gray-700 hover:text-cosmetic-rose font-medium">
-              Products
+              Товары
             </Link>
             <Link to="/categories/skincare" className="text-gray-700 hover:text-cosmetic-rose font-medium">
-              Skincare
+              Уход за кожей
             </Link>
             <Link to="/categories/makeup" className="text-gray-700 hover:text-cosmetic-rose font-medium">
-              Makeup
+              Макияж
             </Link>
             <Link to="/categories/haircare" className="text-gray-700 hover:text-cosmetic-rose font-medium">
-              Haircare
+              Уход за волосами
             </Link>
           </nav>
 
-          {/* Search, Cart, and Mobile Menu */}
+          {/* Поиск, Корзина и Мобильное меню */}
           <div className="flex items-center space-x-4">
             <form onSubmit={handleSearch} className="hidden md:flex items-center relative">
               <Input
                 type="text"
-                placeholder="Search..."
+                placeholder="Поиск..."
                 className="w-64 pr-10"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -79,7 +79,7 @@ const Header = () => {
               size="icon" 
               className="relative" 
               onClick={toggleCart}
-              aria-label="Cart"
+              aria-label="Корзина"
             >
               <ShoppingCart />
               {totalItems > 0 && (
@@ -94,38 +94,38 @@ const Header = () => {
               size="icon" 
               className="md:hidden" 
               onClick={toggleMenu}
-              aria-label="Menu"
+              aria-label="Меню"
             >
               {isMenuOpen ? <X /> : <Menu />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Мобильное меню */}
         {isMenuOpen && (
           <div className="mt-4 md:hidden">
             <nav className="flex flex-col space-y-3">
               <Link to="/" className="text-gray-700 hover:text-cosmetic-rose font-medium py-2" onClick={toggleMenu}>
-                Home
+                Главная
               </Link>
               <Link to="/products" className="text-gray-700 hover:text-cosmetic-rose font-medium py-2" onClick={toggleMenu}>
-                Products
+                Товары
               </Link>
               <Link to="/categories/skincare" className="text-gray-700 hover:text-cosmetic-rose font-medium py-2" onClick={toggleMenu}>
-                Skincare
+                Уход за кожей
               </Link>
               <Link to="/categories/makeup" className="text-gray-700 hover:text-cosmetic-rose font-medium py-2" onClick={toggleMenu}>
-                Makeup
+                Макияж
               </Link>
               <Link to="/categories/haircare" className="text-gray-700 hover:text-cosmetic-rose font-medium py-2" onClick={toggleMenu}>
-                Haircare
+                Уход за волосами
               </Link>
             </nav>
             <form onSubmit={handleSearch} className="mt-4">
               <div className="flex">
                 <Input
                   type="text"
-                  placeholder="Search..."
+                  placeholder="Поиск..."
                   className="w-full"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -139,7 +139,7 @@ const Header = () => {
         )}
       </div>
       
-      {/* Cart Drawer */}
+      {/* Корзина */}
       <Cart />
     </header>
   );

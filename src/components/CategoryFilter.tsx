@@ -10,11 +10,11 @@ interface CategoryFilterProps {
 
 const CategoryFilter = ({ activeCategory, onCategoryChange }: CategoryFilterProps) => {
   const categories: { name: string; value: Category }[] = [
-    { name: 'All', value: 'all' },
-    { name: 'Skincare', value: 'skincare' },
-    { name: 'Makeup', value: 'makeup' },
-    { name: 'Haircare', value: 'haircare' },
-    { name: 'Fragrance', value: 'fragrance' },
+    { name: 'Все', value: 'all' },
+    { name: 'Уход за кожей', value: 'skincare' },
+    { name: 'Макияж', value: 'makeup' },
+    { name: 'Уход за волосами', value: 'haircare' },
+    { name: 'Ароматы', value: 'fragrance' },
   ];
 
   return (

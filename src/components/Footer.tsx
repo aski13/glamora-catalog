@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-cosmetic-charcoal">Glamora</h3>
             <p className="text-gray-600 mb-4">
-              Your destination for premium beauty products and skincare essentials.
+              Ваш магазин премиальных косметических товаров и средств по уходу за кожей.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-cosmetic-charcoal hover:text-cosmetic-rose">
@@ -34,93 +34,93 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-cosmetic-charcoal">Shop</h3>
+            <h3 className="text-lg font-semibold mb-4 text-cosmetic-charcoal">Магазин</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/categories/skincare" className="text-gray-600 hover:text-cosmetic-rose">
-                  Skincare
+                  Уход за кожей
                 </Link>
               </li>
               <li>
                 <Link to="/categories/makeup" className="text-gray-600 hover:text-cosmetic-rose">
-                  Makeup
+                  Макияж
                 </Link>
               </li>
               <li>
                 <Link to="/categories/haircare" className="text-gray-600 hover:text-cosmetic-rose">
-                  Haircare
+                  Уход за волосами
                 </Link>
               </li>
               <li>
                 <Link to="/categories/fragrance" className="text-gray-600 hover:text-cosmetic-rose">
-                  Fragrance
+                  Ароматы
                 </Link>
               </li>
               <li>
                 <Link to="/products" className="text-gray-600 hover:text-cosmetic-rose">
-                  All Products
+                  Все товары
                 </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-cosmetic-charcoal">About</h3>
+            <h3 className="text-lg font-semibold mb-4 text-cosmetic-charcoal">О нас</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-600 hover:text-cosmetic-rose">
-                  Our Story
+                  Наша история
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-cosmetic-rose">
-                  Ingredients
+                  Ингредиенты
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-cosmetic-rose">
-                  Sustainability
+                  Экологичность
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-cosmetic-rose">
-                  Blog
+                  Блог
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-cosmetic-rose">
-                  Contact Us
+                  Связаться с нами
                 </a>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-cosmetic-charcoal">Customer Service</h3>
+            <h3 className="text-lg font-semibold mb-4 text-cosmetic-charcoal">Обслуживание клиентов</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-600 hover:text-cosmetic-rose">
-                  FAQ
+                  Часто задаваемые вопросы
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-cosmetic-rose">
-                  Shipping & Returns
+                  Доставка и возврат
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-cosmetic-rose">
-                  Store Locator
+                  Поиск магазинов
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-cosmetic-rose">
-                  Privacy Policy
+                  Политика конфиденциальности
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-cosmetic-rose">
-                  Terms & Conditions
+                  Условия и положения
                 </a>
               </li>
             </ul>
@@ -129,7 +129,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-gray-200">
           <p className="text-gray-500 text-center">
-            © {new Date().getFullYear()} Glamora. All rights reserved.
+            © {new Date().getFullYear()} Glamora. Все права защищены.
           </p>
         </div>
       </div>
