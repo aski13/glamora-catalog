@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import ProductList from '@/components/ProductList';
 import { products } from '@/data/products';
-import { Category } from '@/models/types';
+import { Category, categoryTranslations } from '@/models/types';
 
 const CategoryPage = () => {
   const { category } = useParams<{ category: string }>();
@@ -15,28 +15,17 @@ const CategoryPage = () => {
     // Validate the category param
     if (category === 'skincare' || category === 'makeup' || 
         category === 'haircare' || category === 'fragrance') {
-      setValidCategory(category);
+      setValidCategory(category as Category);
       
       // Set the page title based on the category
-      switch (category) {
-        case 'skincare':
-          setPageTitle('Skincare Products');
-          break;
-        case 'makeup':
-          setPageTitle('Makeup Products');
-          break;
-        case 'haircare':
-          setPageTitle('Haircare Products');
-          break;
-        case 'fragrance':
-          setPageTitle('Fragrances');
-          break;
-        default:
-          setPageTitle('Products');
+      if (category in categoryTranslations) {
+        setPageTitle(`${categoryTranslations[category as Category]} товары`);
+      } else {
+        setPageTitle('Товары');
       }
     } else {
       setValidCategory('all');
-      setPageTitle('All Products');
+      setPageTitle('Все товары');
     }
   }, [category]);
 

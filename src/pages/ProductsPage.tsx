@@ -7,7 +7,7 @@ const ProductsPage = () => {
   return (
     <Layout>
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-3xl font-bold mb-8 text-cosmetic-charcoal">All Products</h1>
+        <h1 className="text-3xl font-bold mb-8 text-cosmetic-charcoal">Все товары</h1>
         <ProductList products={products} />
       </div>
     </Layout>

@@ -27,22 +27,22 @@ const Cart = () => {
     <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
       <SheetContent className="sm:max-w-md w-full">
         <SheetHeader>
-          <SheetTitle>Your Cart ({totalItems} items)</SheetTitle>
+          <SheetTitle>Ваша корзина ({totalItems} товаров)</SheetTitle>
         </SheetHeader>
         
         <div className="flex flex-col gap-5 py-4 overflow-y-auto max-h-[calc(100vh-200px)]">
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-12 text-center">
               <div className="text-4xl mb-4">🛍️</div>
-              <h3 className="text-lg font-medium mb-2">Your cart is empty</h3>
+              <h3 className="text-lg font-medium mb-2">Ваша корзина пуста</h3>
               <p className="text-muted-foreground mb-6">
-                Looks like you haven't added any products to your cart yet.
+                Похоже, вы еще не добавили товары в корзину.
               </p>
               <Button 
                 className="bg-cosmetic-rose hover:bg-cosmetic-pink"
                 onClick={() => setIsCartOpen(false)}
               >
-                Continue Shopping
+                Продолжить покупки
               </Button>
             </div>
           ) : (
@@ -70,7 +70,7 @@ const Cart = () => {
                           {item.product.name}
                         </Link>
                       </h3>
-                      <p className="ml-4">${(item.product.price * item.quantity).toFixed(2)}</p>
+                      <p className="ml-4">{(item.product.price * item.quantity).toLocaleString()} ₽</p>
                     </div>
                     <p className="mt-1 text-sm text-gray-500 line-clamp-1">{item.product.category}</p>
                   </div>
@@ -116,23 +116,23 @@ const Cart = () => {
           <>
             <div className="border-t border-gray-200 pt-4">
               <div className="flex justify-between text-base font-medium text-gray-900 mb-1">
-                <p>Subtotal</p>
-                <p>${totalPrice.toFixed(2)}</p>
+                <p>Итого</p>
+                <p>{totalPrice.toLocaleString()} ₽</p>
               </div>
               <p className="text-sm text-gray-500">
-                Shipping and taxes calculated at checkout.
+                Доставка и налоги рассчитываются при оформлении заказа.
               </p>
             </div>
             <SheetFooter className="flex-col gap-3 mt-6">
               <Button className="w-full bg-cosmetic-rose hover:bg-cosmetic-pink text-white">
-                Checkout
+                Оформить заказ
               </Button>
               <Button 
                 variant="outline" 
                 className="w-full"
                 onClick={clearCart}
               >
-                Clear Cart
+                Очистить корзину
               </Button>
             </SheetFooter>
           </>

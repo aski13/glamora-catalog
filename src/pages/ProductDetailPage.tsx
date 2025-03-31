@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { useCart } from '@/contexts/CartContext';
 import { products } from '@/data/products';
-import { Product } from '@/models/types';
+import { Product, categoryTranslations } from '@/models/types';
 import { Star, Minus, Plus, ShoppingCart, ChevronLeft } from 'lucide-react';
 
 const ProductDetailPage = () => {
@@ -98,7 +98,7 @@ const ProductDetailPage = () => {
           asChild
         >
           <Link to="/products">
-            <ChevronLeft size={16} className="mr-1" /> Back to Products
+            <ChevronLeft size={16} className="mr-1" /> Назад к товарам
           </Link>
         </Button>
         
@@ -113,7 +113,7 @@ const ProductDetailPage = () => {
           
           <div>
             <div className="mb-2 text-cosmetic-rose uppercase text-sm tracking-wider">
-              {product.category}
+              {product.category && categoryTranslations[product.category as keyof typeof categoryTranslations] || product.category}
             </div>
             <h1 className="text-3xl font-bold text-cosmetic-charcoal mb-3">
               {product.name}
@@ -124,7 +124,7 @@ const ProductDetailPage = () => {
             </div>
             
             <div className="text-2xl font-bold text-cosmetic-charcoal mb-6">
-              ${product.price.toFixed(2)}
+              {product.price.toLocaleString()} ₽
             </div>
             
             <p className="text-gray-600 mb-8">
@@ -135,7 +135,7 @@ const ProductDetailPage = () => {
             
             <div className="mb-6">
               <div className="flex items-center mb-4">
-                <span className="mr-4 text-gray-700">Quantity:</span>
+                <span className="mr-4 text-gray-700">Количество:</span>
                 <Button
                   variant="outline"
                   size="icon"
@@ -160,22 +160,22 @@ const ProductDetailPage = () => {
                 className="w-full bg-cosmetic-rose hover:bg-cosmetic-pink text-white py-6"
                 onClick={handleAddToCart}
               >
-                <ShoppingCart className="mr-2 h-5 w-5" /> Add to Cart
+                <ShoppingCart className="mr-2 h-5 w-5" /> Добавить в корзину
               </Button>
             </div>
             
             <div className="bg-gray-50 p-4 rounded-lg text-sm text-gray-600 space-y-2">
               <p className="flex items-center">
                 <span className="material-icons mr-2 text-green-500">✓</span>
-                Free shipping on orders over $50
+                Бесплатная доставка при заказе от 4500 ₽
               </p>
               <p className="flex items-center">
                 <span className="material-icons mr-2 text-green-500">✓</span>
-                30-day money-back guarantee
+                30-дневная гарантия возврата денег
               </p>
               <p className="flex items-center">
                 <span className="material-icons mr-2 text-green-500">✓</span>
-                Cruelty-free and vegan
+                Продукты не тестируются на животных и подходят для веганов
               </p>
             </div>
           </div>

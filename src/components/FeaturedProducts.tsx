@@ -14,8 +14,8 @@ interface FeaturedProductsProps {
 
 const FeaturedProducts = ({ 
   products, 
-  title = "Featured Products", 
-  subtitle = "Discover our most popular beauty essentials",
+  title = "Популярные товары", 
+  subtitle = "Откройте для себя наши самые популярные продукты для красоты",
   limit = 4
 }: FeaturedProductsProps) => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -48,7 +48,7 @@ const FeaturedProducts = ({
             className="bg-cosmetic-rose hover:bg-cosmetic-pink text-white px-8"
             asChild
           >
-            <Link to="/products">View All Products</Link>
+            <Link to="/products">Все товары</Link>
           </Button>
         </div>
       </div>

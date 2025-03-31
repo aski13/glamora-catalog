@@ -58,7 +58,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <p className="text-gray-500 text-sm mb-2 line-clamp-2">{product.description}</p>
           <div className="flex justify-between items-center">
             <span className="text-lg font-bold text-cosmetic-charcoal">
-              ${product.price.toFixed(2)}
+              {product.price.toLocaleString()} ₽
             </span>
             {renderRating()}
           </div>
@@ -68,7 +68,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             className="w-full bg-cosmetic-rose hover:bg-cosmetic-pink text-white product-actions"
             onClick={handleAddToCart}
           >
-            <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
+            <ShoppingCart className="mr-2 h-4 w-4" /> В корзину
           </Button>
         </CardFooter>
       </Card>
