@@ -108,6 +108,11 @@ const ProductDetailPage = () => {
               src={product.imageUrl}
               alt={product.name}
               className="w-full h-auto object-cover"
+              loading="eager"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = 'https://placehold.co/800x600?text=' + encodeURIComponent(product.name);
+              }}
             />
           </div>
           

@@ -45,6 +45,11 @@ const FeaturedCategories = () => {
                     src={category.image}
                     alt={category.name}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'https://placehold.co/400x400?text=' + encodeURIComponent(category.name);
+                    }}
                   />
                 </div>
                 <CardContent className="p-4 text-center">

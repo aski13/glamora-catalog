@@ -46,6 +46,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
             src={product.imageUrl}
             alt={product.name}
             className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            loading="lazy"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = 'https://placehold.co/400x400?text=' + encodeURIComponent(product.name);
+            }}
           />
           <div className="absolute top-2 right-2">
             <div className="bg-white rounded-full px-2 py-1 text-xs font-medium text-cosmetic-charcoal">

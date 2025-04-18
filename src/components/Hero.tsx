@@ -36,6 +36,11 @@ const Hero = () => {
                 src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80"
                 alt="Коллекция косметики"
                 className="w-full h-full object-cover"
+                loading="eager"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'https://placehold.co/600x400?text=Коллекция+косметики';
+                }}
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-3/4 h-3/4 rounded-lg bg-cosmetic-pink z-0"></div>
